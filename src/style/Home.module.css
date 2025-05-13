@@ -1,0 +1,170 @@
+
+.banner_sec{
+background-image: url("../../public/Hero-area-1.jpg");
+background-position: right center;
+background-repeat: no-repeat;
+background-size: 82%;
+background-color: #f2f2f2;
+}
+
+.banner_padd{padding-top: 100px;
+min-height: 600px;
+display: flex;
+align-items: center;
+padding-bottom: 100px;}
+
+
+.banner_sec_content{width: 60%;}
+
+.banner_sec_content .sub_title {
+color: #D350BE;
+margin-bottom: 30px; font-size: 24px;
+}
+
+.banner_sec_content .title {
+font-size: 60px;
+font-weight: 700;
+margin-bottom: 16px;
+line-height: 73px;
+}
+.banner_sec_content p{
+font-size: 24px;
+line-height: 36px;
+margin-top: -7px;
+}
+
+.formSec_header{background: #fff;
+border-radius: 15px;
+padding: 15px;
+margin-top: 25px;
+box-shadow: 0 0 7px 8px #e4e4e4;
+border: #f7f7f7 solid 1px;}
+.phoneField{display: flex;}
+.phone_1{width: 15%;
+padding: 0 !important;
+border: var(--hover-color) solid 1px !important;
+border-right: none !important;
+border-radius: 40px 0 0 40px !important;
+text-align: center;
+background: var(--hover-color);
+color: #fff !important;
+font-weight: 900; margin: 0 !important;}
+.phone_2{width: 85%; border: var(--hover-color) solid 1px !important; border-radius: 0 40px 40px 0 !important; margin: 0 !important;}
+
+.button_CTA{background: var(--hover-color); border-radius: 40px; color: #fff; font-size: 16px;}
+
+.header_bot_content{background: #fff; border-radius: 10px; padding:20px; box-shadow: 0px 12px 24px rgba(47, 65, 129, 0.1); 
+margin-bottom: 45px; text-align: center;}
+
+
+.scroll_Sec{width: 100%; margin-bottom: 80px;}
+
+.scroll_Sec .partner_box {
+padding:30px 40px 30px 0px;
+position: relative;
+}
+
+.scroll_Sec .partner_box::before {
+position: absolute;
+top: 0px;
+right: 0px;
+height: 100%;
+width: 500%;
+content: "";
+background: var(--body-color);
+box-shadow: 0px 12px 24px rgba(47, 65, 129, 0.1);
+border-radius: 0px 20px 20px 0px;
+}
+
+.scroll_title{z-index: 999; position: relative; height: 100%; align-items: center; display: flex;}
+.scroll_Logo{z-index: 999; position: relative;}
+
+.scroll_Sec h4.title-partner {
+font-size: 22px;
+line-height: 30px;
+}
+
+.scroll_Sec h4.title_partner span {
+color: #d350be;
+font-size: 22px;
+font-weight: 700;
+} 
+
+ul.partner_logo .slick-slide {
+box-shadow: 1px 0px 8px #ccc;
+margin: 0 15px;
+padding: 10px 15px;
+color: #333;
+font-weight: 700;
+}
+
+ul.partner_logo .slick-track {
+padding-top: 15px;
+padding-bottom: 15px; transition: all 0.3s;
+transition: all 500ms ease-in-out; cursor: pointer; border-radius: 5px;
+}
+
+ul.partner_logo li{font-weight: 700; transition: all 0.3s; transition: all 500ms ease-in-out;  border-radius: 5px;}
+/*ul.partner_logo li:hover{color: #fff;}*/
+ul.partner_logo .slick-slide:hover{background: #d350be; color: #fff; border-radius: 5px;}
+ul.partner_logo .slick-slide:hover li{color: #fff;}
+
+.header_bot_content{background: #fff; border-radius: 10px; padding:20px; box-shadow: 0px 12px 24px rgba(47, 65, 129, 0.1); 
+margin-bottom: 45px; text-align: center; width: 100%;}
+/* .header_bot_content h4.sub-title {color: var(--head-alt-color); margin-bottom: 30px;} */
+
+.header_bot_content h2.title {font-size: 50px; font-weight: 700; margin-bottom: 16px; line-height: 48px;}
+.header_bot_content h2.title span {color: var(--head-alt-color); margin-bottom: 30px; display: block; font-size: 32px;}
+.header_bot_content p {margin-bottom: 20px; line-height: 33px; font-size: 17px;}
+
+.pinkcolor{color:#d350be}
+
+.blueSec{background: #414197 url("../../public/mobile_img_blue.png") no-repeat right top; 
+    /* padding: 15px; width: 100%; padding:55px 0;  */
+    background-size: contain;
+    min-height: 799px;
+} 
+
+.blue_txt h2{color: #FFFFFF;
+font-family: "Jost", Sans-serif;
+font-size: 43px;
+font-weight: 700;
+line-height: 55px; text-align: left; margin-bottom: 20px;}
+
+.blue_txt h2 strong{
+color: #fff;
+font-size: 30px; line-height: 30px;
+margin-bottom: 20px; display: block;
+}
+
+
+
+.blue_txt p{
+margin: 0;
+font-family: var(--body-font);
+font-size: 18px;
+font-weight: 400;
+color: #fff;
+line-height: 30px;
+}
+
+
+.blue_txt ul{list-style-type: none; margin-top: 15px;}
+.blue_txt ul li{margin: 0 0 10px 0;
+  color: #fff;
+  padding: 0 0 0 26px;
+  position: relative;}
+.blue_txt ul li::before {content: "";
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f00c";
+  margin-right: 11px;
+  position: absolute;
+  left: 0;
+  top: 8px;
+} 
+
+.blueSec_Bottom {
+    background: #414197;
+  }
+      
+
