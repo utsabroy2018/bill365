@@ -3,6 +3,9 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 // import { useNavigate } from 'react-router-dom';
 import { useRouter } from 'next/navigation';
+import { htmlToText } from 'html-to-text';
+
+
 
 export const BentoGrid = ({
   className,
@@ -31,6 +34,11 @@ export const BentoGridItem = ({
   icon
 }) => {
   const router = useRouter();
+
+// const rawHTML = `<p>In today’s fast-paced business world, staying updated with tax regulations is crucial for success. GST Billing Software helps businesses in India manage their invoices, taxes, and returns with ease. Within the first 60 words, it becomes clear that using GST Billing Software saves time, reduces errors, and ensures businesses stay compliant with government rules. Since… <a class="more-link" href="https://bill365.app/bill365/why-is-gst-billing-software-important-for-businesses-in-india/">Continue reading</a></p>`;
+
+// const description = htmlToText(description, { wordwrap: false });
+
   return (
     <div
       className={cn(
@@ -50,20 +58,26 @@ export const BentoGridItem = ({
         {/* {icon} */}
         <div
           className="mt-0 mb-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
-          {/* {title} */}
           {title?.split(' ').slice(0, 4).join(' ')}{title?.split(' ').length > 4 ? '...' : ''}
         </div>
         <div
           className="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300">
           {/* {description} */}
-          <span className="text-sm">{description?.split(' ').slice(0, 8).join(' ')}{description?.split(' ').length > 8 ? '...' : ''}</span>
+          <span className="text-sm">
+            {/* {description?.split(' ').slice(0, 8).join(' ')}{description?.split(' ').length > 8 ? '...' : ''} */}
+            {htmlToText(description, { wordwrap: false })
+            ?.split(' ')
+            .slice(0, 8)
+            .join(' ')}
+            {htmlToText(description, { wordwrap: false })?.split(' ').length > 8 ? '...' : ''}
+          </span>
         </div>
-        {/* <button className="bg-sky-500 hover:bg-sky-700 rounded-full px-5 py-1 mt-3 text-white cursor-pointer" 
+        <button className="bg-sky-500 hover:bg-sky-700 rounded-full px-5 py-1 mt-3 text-white cursor-pointer" 
         // onClick={()=>{
         //   // navigate('/blog/product-1');
         // }}
         onClick={() => router.push('/blog/product-1')}
-        >Read More</button> */}
+        >Read More</button>
       </div>
     </div>
   );
