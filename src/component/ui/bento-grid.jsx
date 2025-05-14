@@ -31,6 +31,7 @@ export const BentoGridItem = ({
   title,
   description,
   header,
+  id,
   icon
 }) => {
   const router = useRouter();
@@ -47,7 +48,7 @@ export const BentoGridItem = ({
       )}>
       {/* {header} */}
      
-      <img
+      <Image
       src={header}
       alt={author}
       width={300}
@@ -76,7 +77,7 @@ export const BentoGridItem = ({
         // onClick={()=>{
         //   // navigate('/blog/product-1');
         // }}
-        onClick={() => router.push('/blog/product-1')}
+        onClick={() => router.push(`/blog/${id}`)}
         >Read More</button>
       </div>
     </div>

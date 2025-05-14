@@ -1,11 +1,13 @@
 "use client";
 import { BentoGridThirdDemo } from '@/component/BlogList'
+import BlogSidebar from '@/component/BlogSidebar';
 // import React, { useEffect } from 'react'
 import React, { useEffect, useState } from 'react';
+import styles from '../../style/Blog.module.css'
 
 function Blog() {
 
-   const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
    // 'https://newsapi.org/v2/everything?q=tesla&from=2025-04-13&sortBy=publishedAt&apiKey=7e5b30be83c547a7bf903bbb9332f133'
@@ -39,11 +41,10 @@ function Blog() {
       {/* {JSON.stringify(articles[0], null, 2)} */}
       <BentoGridThirdDemo articles={articles} />
 
-          <p><a href='/blog/product-1'>Products 1</a></p>
-        <p><a href='/blog/product-2'>Products 2</a></p>
-        <p><a href='/blog/product-3'>Products 3</a></p>
     </div>
-    <div className="px-4">05</div>
+    <div className={`px-4 ${styles.sideBarBlog}`}>
+      <BlogSidebar articles={articles} />
+    </div>
     </div>
     </div>
     </>

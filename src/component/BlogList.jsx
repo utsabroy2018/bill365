@@ -50,6 +50,7 @@ export function BentoGridThirdDemo({articles}) {
           description={item?.excerpt?.rendered}
           // header={item?.urlToImage}
           className={cn("[&>p:text-lg]", item.className)}
+          id={item?.id}
           // icon={item.icon} 
           />
           </>

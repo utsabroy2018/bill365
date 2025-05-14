@@ -34,3 +34,51 @@ body {
 }
 
 .pinkcolor{color:#d350be}
+
+figcaption, .wp-caption, .wp-caption-text, .wp-block-embed figcaption {
+  color: currentColor;
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.blogdtlsWrap .leftDetails h1 {
+	font-size: 33px;
+	font-weight: 400;
+	color: #05061a;
+	margin-bottom: 18px;
+}
+.blogdtlsWrap .leftDetails h2 {
+	font-size: 26px;
+	font-weight: 400; margin-bottom: 10px;
+	color: #05061a;
+}
+.blogdtlsWrap .leftDetails h3 {
+	font-size: 18px;
+	margin-bottom: 7px;
+	font-weight: 400;
+	color: #05061a;
+}
+.blogdtlsWrap .leftDetails h4 {
+	font-size: 16px;
+	margin-bottom: 5px;
+	font-weight: 400;
+	color: #05061a;
+}
+
+.blogdtlsWrap .leftDetails h5 {
+	font-size: 16px;
+	margin-bottom: 5px;
+	font-weight: 400;
+	color: #05061a;
+}
+
+.blogdtlsWrap .leftDetails h6 {
+	font-size: 16px;
+	margin-bottom: 5px;
+	font-weight: 400;
+	color: #05061a;
+}
+
