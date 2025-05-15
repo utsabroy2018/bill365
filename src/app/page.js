@@ -1,3 +1,4 @@
+'use client'
 // import AnimatedRow from "@/component/AnimatedRow";
 import { AnimatedRow } from "@/component/AnimatedRow";
 import { AppleCardsCarouselDemo } from "@/component/AppleCardsCarouselDemo";
@@ -15,6 +16,11 @@ import { HomeTestimonials } from "@/component/HomeTestimonials";
 import HomeBlogList from "@/component/HomeBlogList";
 import HomeFaq from "@/component/HomeFaq";
 import HomeBillboardCTA from "@/component/HomeBillboardCTA";
+
+import React, { useEffect, useState } from 'react'
+import DOMPurify from 'dompurify'
+import Link from 'next/link'
+import HTMLContent_Convert from '@/component/DOMPurify';
 
 const rows = [
   {
@@ -69,12 +75,36 @@ const features = [
 
 export default function Home() {
 
+    const [pageData, setPageData] = useState([]);
+    const [loading, setLoading] = useState(true);
+  
+    async function fetchPageData() {
+          try {
+            const res = await fetch(
+              'https://bill365.app/bill365/wp-json/wp/v2/pages/2'
+            );
+            const data = await res.json();
+            setPageData(data);
+
+            console.log(data, 'datadatadata');
+            
+            
+          } catch (error) {
+            console.error('Error fetching articles:', error);
+          } finally {
+            setLoading(false);
+          }
+        }
+
+    useEffect(() => {
+          fetchPageData();
+        }, []);
 
   return (
     <>
       <HeaderTop />
       {/* <BannerBottomScroll /> */}
-      <AppleCardsCarouselDemo />
+      <AppleCardsCarouselDemo pagedata={pageData?.acf?.our_client} />
       <HeroSectionOne />
       {/* <HomeFeatureSection /> */}
 

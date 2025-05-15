@@ -82,3 +82,8 @@ figcaption, .wp-caption, .wp-caption-text, .wp-block-embed figcaption {
 	color: #05061a;
 }
 
+ .alignright {
+    float: right;
+    margin-left: var(--global--spacing-horizontal);
+  }
+

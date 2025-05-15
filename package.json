@@ -12,6 +12,7 @@
     "@radix-ui/react-accordion": "^1.2.10",
     "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.1.1",
+    "dompurify": "^3.2.5",
     "font-awesome": "^4.7.0",
     "framer-motion": "^12.10.4",
     "html-to-text": "^9.0.5",

@@ -1,0 +1,128 @@
+ 
+.banner_sec_inner{
+  background-color: #f2f2f2; background-repeat: no-repeat; background-position:right center; 
+}
+
+.banner_padd_Inner {
+  padding-top: 0;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+}
+
+.banner_sec_content_inner{
+	/* width: 70%; */
+  max-width: 850px;
+}
+
+
+
+ .banner_sec_content_inner h1 {
+font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 52px;
+}
+.banner_sec_content_inner p{
+  font-size: 24px;
+  line-height: 36px;
+  margin-top: -7px; margin-bottom: 20px;
+}
+
+.banner_sec_content_inner p a{background: var(--color-indigo-800); border-radius: 40px; color: #fff; padding:10px 55px; font-size: 18px;}
+
+
+.section_text_Inner{}
+
+
+.section_text_Inner h2 {font-size: 35px;
+  font-weight: 700; margin-bottom: 16px; line-height: 40px;}
+
+.section_text_Inner h3 {font-size: 25px;
+  font-weight: 700; margin-bottom: 16px; line-height: 30px;}
+
+.section_text_Inner p{margin-bottom: 20px;
+  line-height: inherit;}
+
+
+
+.section_text_Inner ul{list-style-type: none; margin-top: 15px; margin-bottom: 20px;}
+.section_text_Inner ul li{margin: 0 0 10px 0;
+  color:var(--para-color);
+  padding: 0 0 0 26px; line-height: 25px;
+  position: relative;}
+.section_text_Inner ul li::before {content: "";
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f00c";
+  margin-right: 11px;
+  position: absolute;
+  left: 0; color: #414197;
+  top: 8px;
+}
+
+
+.developmentSec{}
+
+.developmentSec .box {
+	background: #fff;
+	border: none;
+	padding: 22px 15px 30px 15px;
+	text-align: center;
+	/* margin-bottom: 75px; */
+	border-radius: 10px;
+	box-shadow:0 0 10px 3px #d9d8d8;
+	min-height: 322px;
+}
+.developmentSec .box .icon {
+	border-radius: 50px;
+	overflow: hidden;
+	height: 78px;
+	width: 78px;
+	display: flex;
+	align-items: center;
+	margin: -55px auto 44px;
+	border: 1px solid #d3d4d6;
+	background: #fff
+}
+.developmentSec .box .icon span {
+	text-align: center;
+	width: 100%
+}
+.developmentSec .box h2 {
+	color: #05061a;
+	font-size: 22px;
+	font-weight: 700;
+	margin: 0;
+	padding: 0 0 12px;
+	line-height: 20px
+}
+.developmentSec .box p {
+	color: #3e415a;
+	font-size: 16px;
+	line-height: 25px;
+	margin: 0;
+	padding-bottom: 20px
+}
+.developmentSec .box a {
+	font-size: 15px;
+	line-height: 22px;
+	margin: 0;
+	padding-bottom: 5px;
+	font-weight: 600;
+	color: #111226
+}
+.developmentSec .box a:hover {
+	color: #111226
+}
+.developmentSec .box a i {
+	margin-left: 3px
+}
+
+
+
+
+
+
+
+
+
