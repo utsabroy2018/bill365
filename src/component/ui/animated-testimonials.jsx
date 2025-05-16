@@ -80,7 +80,7 @@ export const AnimatedTestimonials = ({
                     width={500}
                     height={500}
                     draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center" />
+                    className="h-full w-full rounded-3xl object-cover object-center shadow-xl" />
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -108,9 +108,9 @@ export const AnimatedTestimonials = ({
             <h3 className="text-2xl font-bold text-black dark:text-white">
               {testimonials[active].name}
             </h3>
-            <p className="text-sm text-gray-500 dark:text-neutral-500">
+            {/* <p className="text-sm text-gray-500 dark:text-neutral-500">
               {testimonials[active].designation}
-            </p>
+            </p> */}
             <motion.p className="mt-8 text-lg text-gray-500 dark:text-neutral-300">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span

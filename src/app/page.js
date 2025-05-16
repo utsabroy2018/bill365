@@ -3,7 +3,6 @@
 import { AnimatedRow } from "@/component/AnimatedRow";
 import { AppleCardsCarouselDemo } from "@/component/AppleCardsCarouselDemo";
 import HeaderTop from "@/component/Header_top";
-import HomeFeatureSection from "@/component/HomeFeatureSection";
 import { HeroSectionOne } from "@/component/HomeWelcome";
 // import HomeWelcome from "@/component/HomeWelcome";
 import Navbar from "@/component/Navbar";
@@ -18,121 +17,74 @@ import HomeFaq from "@/component/HomeFaq";
 import HomeBillboardCTA from "@/component/HomeBillboardCTA";
 
 import React, { useEffect, useState } from 'react'
-import DOMPurify from 'dompurify'
-import Link from 'next/link'
-import HTMLContent_Convert from '@/component/DOMPurify';
-
-const rows = [
-  {
-    content: {
-      title: `<span>Hassle-free Online Billing Software</span> Create Invoices at Lightning Speed with Our Billing Software`,
-      shortText: "A customized and exclusive toolkit of management features makes Bill365 an ideal billing software in India for retailers. In less than a second, it generates bills. Let’s make billing a harmonious process!",
-      fullText: "A customized and exclusive toolkit of management features makes Bill365 an ideal billing software in India for retailers. In less than a second, it generates bills. Let’s make billing a harmonious process!"
-    },
-
-    image: "/feature-item-1-1.webp",
-  },
-  {
-    content: {
-      title: "<span>Hassle-free Online Billing Software</span> Create Invoices at Lightning Speed with Our Billing Software",
-      shortText: "A customized and exclusive toolkit of management features makes Bill365 an ideal billing software in India for retailers. In less than a second, it generates bills. Let’s make billing a harmonious process!",
-      fullText: "A customized and exclusive toolkit of management features makes Bill365 an ideal billing software in India for retailers. In less than a second, it generates bills. Let’s make billing a harmonious process!"
-    },
-    image: "/feature-item-1-1.webp",
-    reverse: true,
-  },
-  {
-    content: {
-      title: "<span>Hassle-free Online Billing Software</span> Create Invoices at Lightning Speed with Our Billing Software",
-      shortText: "A customized and exclusive toolkit of management features makes Bill365 an ideal billing software in India for retailers. In less than a second, it generates bills. Let’s make billing a harmonious process!",
-      fullText: "A customized and exclusive toolkit of management features makes Bill365 an ideal billing software in India for retailers. In less than a second, it generates bills. Let’s make billing a harmonious process!"
-    },
-    image: "/feature-item-1-1.webp",
-  },
-  {
-    content: {
-      title: "<span>Hassle-free Online Billing Software</span> Create Invoices at Lightning Speed with Our Billing Software",
-      shortText: "A customized and exclusive toolkit of management features makes Bill365 an ideal billing software in India for retailers. In less than a second, it generates bills. Let’s make billing a harmonious process!",
-      fullText: "A customized and exclusive toolkit of management features makes Bill365 an ideal billing software in India for retailers. In less than a second, it generates bills. Let’s make billing a harmonious process!"
-    },
-    image: "/feature-item-1-1.webp",
-    reverse: true,
-  },
-];
-
-
-const features = [
-
-
-  { name: 'Origin', description: 'Designed by Good Goods, Inc.' },
-  { name: 'Material', description: 'Solid walnut base with rare earth magnets and powder coated steel card cover' },
-  { name: 'Dimensions', description: '6.25" x 3.55" x 1.15"' },
-  { name: 'Finish', description: 'Hand sanded and finished with natural oil' },
-  { name: 'Includes', description: 'Wood card tray and 3 refill packs' },
-  { name: 'Considerations', description: 'Made from natural materials. Grain and color vary with each item.' },
-]
 
 
 export default function Home() {
 
-    const [pageData, setPageData] = useState([]);
-    const [loading, setLoading] = useState(true);
-  
-    async function fetchPageData() {
-          try {
-            const res = await fetch(
-              'https://bill365.app/bill365/wp-json/wp/v2/pages/2'
-            );
-            const data = await res.json();
-            setPageData(data);
+  const [pageData, setPageData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-            console.log(data, 'datadatadata');
-            
-            
-          } catch (error) {
-            console.error('Error fetching articles:', error);
-          } finally {
-            setLoading(false);
-          }
-        }
+  async function fetchPageData() {
+    try {
+      const res = await fetch(
+        'https://bill365.app/bill365/wp-json/wp/v2/pages/2'
+      );
+      const data = await res.json();
+      setPageData(data);
 
-    useEffect(() => {
-          fetchPageData();
-        }, []);
+      console.log(data, 'datadatadata');
+
+
+    } catch (error) {
+      console.error('Error fetching articles:', error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchPageData();
+  }, []);
 
   return (
     <>
       <HeaderTop />
       {/* <BannerBottomScroll /> */}
-      <AppleCardsCarouselDemo pagedata={pageData?.acf?.our_client} />
-      <HeroSectionOne />
+
+      <AppleCardsCarouselDemo pageData={pageData?.acf?.our_client} />
+
+      <HeroSectionOne pageData={pageData?.content?.rendered} />
       {/* <HomeFeatureSection /> */}
 
+
       <div className="container mx-auto px-4 py-3">
-        {rows.map((row, index) => (
+        {pageData?.acf?.left_text_right_image_section_new?.map((row, index) => (
           <AnimatedRow
-            key={index}
-            content={row.content}
-            image={row.image}
-            reverse={row.reverse}
+            index={index}
+            content_short_describ={row?.section_text}
+            section_long_text={row?.section_long_text}
+            image={row?.image_section?.url}
           />
         ))}
       </div>
 
 
-      <HomeMobileFeature data={features} />
+      <HomeMobileFeature
+        pageDataTitle={pageData?.acf?.app_feature_section?.app_feature_title}
+        pageDataLeft={pageData?.acf?.app_feature_section?.app_feature_repeater_left}
+        pageDataRight={pageData?.acf?.app_feature_section?.app_feature_repeater_right}
+      />
+      <HomeBlueSection pageData={pageData?.acf?.blue_section?.content_section} />
 
-      <HomeBlueSection />
-
-      <HomeTestimonials />
+      <HomeTestimonials pageDataTitle={pageData?.acf?.customer_say?.customer_say_title} pageData={pageData?.acf?.customer_say?.customer_say_repeater} />
 
       <HomeBlogList />
+      {/* {JSON.stringify(pageData?.acf?.faq?.faq_repeater, null, 2)} */}
+      <HomeFaq pageDataTitle={pageData?.acf?.faq?.faq_title} pageData={pageData?.acf?.faq?.faq_repeater} />
 
-      <HomeFaq />
+      <HomeBillboardCTA pageData={pageData?.acf?.blue_bottom_section?.content_section} />
 
-      <HomeBillboardCTA />
 
-      
 
 
     </>

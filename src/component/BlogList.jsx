@@ -39,8 +39,12 @@ export function BentoGridThirdDemo({articles}) {
     <>
 
     {/* {JSON.stringify(articles[0]?.title?.rendered, null, 2)} */}
+    {/* <pre>
+      {JSON.stringify(paginatedArticles[0]?._embedded, null, 2)}
+      </pre> */}
 
     <BentoGrid className="mx-auto md:auto-rows-[20rem]">
+      
       {paginatedArticles.map((item, i) => (
         <>
         <BentoGridItem

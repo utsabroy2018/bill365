@@ -1,6 +1,7 @@
 import { AnimatedTestimonials } from "@/component/ui/animated-testimonials";
 
-export function HomeTestimonials() {
+export function HomeTestimonials({pageDataTitle, pageData}) {
+
   const testimonials = [
     {
       quote:
@@ -38,9 +39,25 @@ export function HomeTestimonials() {
       src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
+
+  if (!pageData || !Array.isArray(pageData)) {
+    return null; // or a loading spinner/message
+  }
+
+  const testimonials_ = pageData?.map((item) => ({
+    quote: item.customer_say.replace(/<\/?p>/g, ""), // strip <p> tags
+    // quote: item?.customer_say, // strip <p> tags
+    name: item?.customer_name,
+    designation: "xxxxxxxxxxxx", // You can set a default or leave it out
+    // src: item?.customer_thum?.sizes?.cuistomerSay || item.customer_thum?.url || "", // safest fallbacks
+    src: item.customer_thum?.url || "", // safest fallbacks
+  }));
+
+
   return (
     <>
-    <AnimatedTestimonials testimonials={testimonials} />
+    <AnimatedTestimonials 
+    testimonials={testimonials_} />
     </>
   );
 }

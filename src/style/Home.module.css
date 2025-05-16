@@ -84,7 +84,7 @@ font-size: 22px;
 line-height: 30px;
 }
 
-.scroll_Sec h4.title_partner span span {
+.scroll_Sec h4.title_partner span {
 color: #d350be;
 font-size: 22px;
 font-weight: 700;
@@ -110,12 +110,12 @@ ul.partner_logo .slick-slide:hover{background: #d350be; color: #fff; border-radi
 ul.partner_logo .slick-slide:hover li{color: #fff;}
 
 .header_bot_content{background: #fff; border-radius: 10px; padding:20px; box-shadow: 0px 12px 24px rgba(47, 65, 129, 0.1); 
-margin-bottom: 45px; text-align: center; width: 100%;}
-/* .header_bot_content h4.sub-title {color: var(--head-alt-color); margin-bottom: 30px;} */
+    margin-bottom: 45px; text-align: center; width: 100%;}
+/*.header_bot_content h4.sub-title {color: var(--head-alt-color); margin-bottom: 30px;}*/
 
-.header_bot_content h2.title {font-size: 50px; font-weight: 700; margin-bottom: 16px; line-height: 48px;}
-.header_bot_content h2.title span {color: var(--head-alt-color); margin-bottom: 30px; display: block; font-size: 32px;}
-.header_bot_content p {margin-bottom: 20px; line-height: 33px; font-size: 17px;}
+.header_bot_content h2 {font-size: 50px; font-weight: 700; margin-bottom: 16px; line-height: 48px;}
+.header_bot_content h2 span {color: var(--head-alt-color); margin-bottom: 30px; display: block; font-size: 32px;}
+.header_bot_content p {margin-bottom: 35px; line-height: 33px; font-size: 17px; color: #2C3655;}
 
 .pinkcolor{color:#d350be}
 
@@ -166,5 +166,109 @@ line-height: 30px;
 .blueSec_Bottom {
     background: #414197;
   }
+
+  /* .blueSec_Bottom {
+  background: #414197;
+  width: 100%;
+  padding: 35px 24px;
+  border-radius: 15px;
+  margin-bottom: 60px; position: relative;
+} */
+
+.blueSec_Bottom  h2 {
+  color: #FFFFFF;
+  font-family: "Jost", Sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 38px;
+  text-align: left;
+  margin-bottom: 20px;
+  max-width: 650px;
+}
+
+.blueSec_Bottom p{display: inline-block;}
+
+.blueSec_Bottom a{background: #fff;
+  border-radius: 40px;
+  padding: 10px 39px;
+  color: #414197; display: inline-block;}
       
 
+.section_text{width: 100%;}
+.section_text_padd{padding-top: 0; padding-bottom:45px;}
+.section_text .iconSec{background-color: #414197;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center; margin-bottom: 22px;}
+.section_text .iconSec svg{margin: 0 auto;}
+
+/* .section_text h4.sub-title {
+  color: var(--head-alt-color);
+  margin-bottom: 30px;
+} */
+.section_text h2.title {font-size: 50px;
+  font-weight: 700; margin-bottom: 16px; line-height: 48px; color: #2C3655;}
+
+.section_text h2 {font-size: 50px;
+  font-weight: 700; margin-bottom: 16px; line-height: 48px; color: #2C3655;}
+
+.section_text h2 strong{
+  color: #D350BE;
+  margin-bottom: 30px; display: block; font-size: 24px; margin: 0; font-weight:600;
+}
+.section_text p {
+  margin-bottom: 20px; font-size: 18px; line-height: 35px;
+}
+
+.heading_title_feature {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+
+.heading_title_feature h2 {
+  font-size: 50px;
+  line-height: 55px;
+  text-align: center;
+/*  max-width: 550px;*/
+  margin: 0 auto 15px auto;
+  width: 100%; font-weight: 700;
+}
+
+.heading_title_feature h2 strong{
+  text-align: center;
+  color: #D350BE;
+  margin-bottom: 18px; font-size: 24px; display: block; line-height: 25px;
+}
+
+.heading_title_feature p {
+  margin: 0 auto;
+  font-family: var(--body-font);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--para-color);
+  line-height: 30px; text-align: center;
+  max-width: 950px;
+}
+
+
+.faqSec{width: 100%; padding-top: 45px; padding-bottom: 60px;}
+.faqSec .section_header{max-width: 650px; width: 100%; margin: 0 auto 25px auto; text-align: center;}
+.faqSec .section_header h5.sub-title {
+	margin-bottom: 30px;}
+
+.faqSec .section_header h2{font-size: 50px; font-weight: 700; margin-bottom: 16px; line-height: 55px;}
+.faqSec .section_header h2 strong {
+  color: #D350BE;
+  margin-bottom: 9px;
+  font-size: 24px;
+  display: block;
+  line-height: 40px;}
+
+.accordion_faq{}
+.accordion_faq p {
+  padding:0 0 25px 0;
+  font-size: 18px;
+}

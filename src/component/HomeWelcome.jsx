@@ -2,11 +2,14 @@
 
 
 import { motion } from "motion/react";
+import HTMLContent_Convert from "./DOMPurify";
+import styles from '../style/Home.module.css'
 
-export function HeroSectionOne() {
+export function HeroSectionOne({pageData}) {
   return (
     <div
       className="relative container mx-auto my-10 flex max-w-12xl flex-col items-center justify-center">
+        {/* {JSON.stringify(pageData, null, 2)}  */}
       {/* <Navbar /> */}
       <div
         className="absolute inset-y-0 left-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
@@ -23,8 +26,9 @@ export function HeroSectionOne() {
         <div
           className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
       </div>
-      <div className="px-4 py-5 md:py-10 w-full">
-        <h1
+      <div className={`px-4 py-5 md:py-10 w-full ${styles.header_bot_content}`}>
+        <HTMLContent_Convert content={pageData || ''} />
+        {/* <h1
           className="relative z-10 mx-auto w-full text-center text-5xl font-bold text-gray-900 dark:text-gray-900">
           {"GST Billing App in Kolkata for Android Mobile"
             .split(" ")
@@ -42,8 +46,24 @@ export function HeroSectionOne() {
                 {word}
               </motion.span>
             ))}
-        </h1>
-        <motion.p
+        </h1> */}
+        {/* <motion.p
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.3,
+            delay: 0.8,
+          }}
+          className="relative z-10 mx-auto w-full py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400">
+          
+          Do you need a hand in your business account management? Bill365 app is the one you need to simplify your billing and invoice process. 
+          This GST billing app for small businesses is designed to customize your invoices with GST-compliant. 
+        </motion.p> */}
+        {/* <motion.p
           initial={{
             opacity: 0,
           }}
@@ -57,23 +77,8 @@ export function HeroSectionOne() {
           className="relative z-10 mx-auto w-full py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400">
           Do you need a hand in your business account management? Bill365 app is the one you need to simplify your billing and invoice process. 
           This GST billing app for small businesses is designed to customize your invoices with GST-compliant. 
-        </motion.p>
-        <motion.p
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.3,
-            delay: 0.8,
-          }}
-          className="relative z-10 mx-auto w-full py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400">
-          Do you need a hand in your business account management? Bill365 app is the one you need to simplify your billing and invoice process. 
-          This GST billing app for small businesses is designed to customize your invoices with GST-compliant. 
-        </motion.p>
-        <motion.div
+        </motion.p> */}
+        {/* <motion.div
           initial={{
             opacity: 0,
           }}
@@ -93,7 +98,7 @@ export function HeroSectionOne() {
             className="w-60 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
             Contact Support
           </button>
-        </motion.div>
+        </motion.div> */}
         {/* <motion.div
           initial={{
             opacity: 0,

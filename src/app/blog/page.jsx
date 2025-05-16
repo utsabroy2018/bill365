@@ -15,7 +15,8 @@ function Blog() {
  async function fetchNews() {
       try {
         const res = await fetch(
-          'https://bill365.app/bill365/wp-json/wp/v2/posts'
+          // 'https://bill365.app/bill365/wp-json/wp/v2/posts'
+          'https://bill365.app/bill365/wp-json/wp/v2/posts?_embed'
         );
         const data = await res.json();
         setArticles(data);
@@ -38,7 +39,7 @@ function Blog() {
     <div className="grid grid-cols-3 gap-4 py-10">
 
     <div className="col-span-2 px-4">
-      {/* {JSON.stringify(articles[0], null, 2)} */}
+      
       <BentoGridThirdDemo articles={articles} />
 
     </div>

@@ -15,6 +15,6 @@ export default function HTMLContent_Convert({ content }) {
   }, [content]);
 
   return (
-    <span dangerouslySetInnerHTML={{ __html: cleanHTML }} />
+    <div dangerouslySetInnerHTML={{ __html: cleanHTML }} />
   );
 }

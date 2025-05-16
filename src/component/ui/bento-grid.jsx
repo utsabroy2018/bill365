@@ -4,6 +4,7 @@ import Image from "next/image";
 // import { useNavigate } from 'react-router-dom';
 import { useRouter } from 'next/navigation';
 import { htmlToText } from 'html-to-text';
+import HTMLContent_Convert from "../DOMPurify";
 
 
 
@@ -59,7 +60,8 @@ export const BentoGridItem = ({
         {/* {icon} */}
         <div
           className="mt-0 mb-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
-          {title?.split(' ').slice(0, 4).join(' ')}{title?.split(' ').length > 4 ? '...' : ''}
+          {/* {title?.split(' ').slice(0, 4).join(' ')}{title?.split(' ').length > 4 ? '...' : ''} */}
+          <HTMLContent_Convert content={`${title?.split(' ').slice(0, 4).join(' ')}${title?.split(' ').length > 4 ? '...' : ''}`} />
         </div>
         <div
           className="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300">
