@@ -42,7 +42,7 @@ export function BentoGridThirdDemo({articles}) {
     <>
 
     {/* <pre>
-      {JSON.stringify(paginatedArticles[0]?._embedded, null, 2)}
+      // {JSON.stringify(paginatedArticles[0]?.date, null, 2)}
       </pre> */}
 
     <BentoGrid className="mx-auto md:auto-rows-[20rem]">
@@ -56,6 +56,7 @@ export function BentoGridThirdDemo({articles}) {
           title={item?.title?.rendered}
           description={item?.excerpt?.rendered}
           header={item?._embedded["wp:featuredmedia"][0].source_url}
+          datePublish={item?.date}
           className={cn("[&>p:text-lg]", item.className)}
           id={item?.id}
           />
@@ -67,6 +68,7 @@ export function BentoGridThirdDemo({articles}) {
           title={item?.title?.rendered}
           description={item?.excerpt?.rendered}
           header={defaultFeatureImg?.src}
+          datePublish={item?.date}
           className={cn("[&>p:text-lg]", item.className)}
           id={item?.id}
           />

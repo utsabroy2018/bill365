@@ -32,10 +32,19 @@ export const BentoGridItem = ({
   title,
   description,
   header,
+  datePublish,
   id,
   icon
 }) => {
   const router = useRouter();
+
+function formatDate(isoString) {
+  const date = new Date(isoString);
+  return date.toLocaleString('en-US', {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  });
+}
 
 // const rawHTML = `<p>In today’s fast-paced business world, staying updated with tax regulations is crucial for success. GST Billing Software helps businesses in India manage their invoices, taxes, and returns with ease. Within the first 60 words, it becomes clear that using GST Billing Software saves time, reduces errors, and ensures businesses stay compliant with government rules. Since… <a class="more-link" href="https://bill365.app/bill365/why-is-gst-billing-software-important-for-businesses-in-india/">Continue reading</a></p>`;
 
@@ -47,7 +56,6 @@ export const BentoGridItem = ({
         "group/bento shadow-input row-span-1 flex flex-col justify-between space-y-0 rounded-xl border border-neutral-200 bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
         className
       )}>
-      {/* {header} */}
      
       <img
       src={header}
@@ -74,11 +82,12 @@ export const BentoGridItem = ({
             .join(' ')}
             {htmlToText(description, { wordwrap: false })?.split(' ').length > 8 ? '...' : ''}
           </span>
+          
+        </div>
+        <div className="font-sans text-xs font-bold text-indigo-900 mt-4">
+        {formatDate(datePublish)}
         </div>
         <button className="bg-sky-500 hover:bg-sky-700 rounded-full px-5 py-1 mt-3 text-white cursor-pointer" 
-        // onClick={()=>{
-        //   // navigate('/blog/product-1');
-        // }}
         onClick={() => router.push(`/blog/${id}`)}
         >Read More</button>
       </div>

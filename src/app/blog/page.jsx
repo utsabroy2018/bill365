@@ -102,7 +102,7 @@ function Blog() {
     <div className={`px-4 ${styles.sideBarBlog}`}>
       {loading ? (
       <>
-      <div className="flex items-center justify-center h-full">
+      <div className="flex items-center justify-center min-h-screen">
     <div role="status">
     <svg
     aria-hidden="true"
