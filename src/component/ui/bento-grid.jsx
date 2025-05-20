@@ -49,7 +49,7 @@ export const BentoGridItem = ({
       )}>
       {/* {header} */}
      
-      <Image
+      <img
       src={header}
       alt={author}
       width={300}

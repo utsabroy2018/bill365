@@ -267,8 +267,29 @@ line-height: 30px;
   display: block;
   line-height: 40px;}
 
+.faqSec .section_header p{font-size: 18px;}
+
 .accordion_faq{}
 .accordion_faq p {
   padding:0 0 25px 0;
   font-size: 18px;
 }
+
+
+
+.blogFeedBox{margin-bottom: 35px;}
+.blogFeedBox .imgSec{width: 100%; position: relative;}
+.blogFeedBox .imgSec img{width: 100%;}
+.blogFeedBox .imgSec .dateSec{background: #D350BE; padding:7px 10px 7px 15px; font-size: 16px; color: #fff; position: absolute; left: 0; bottom: 15px;}
+.blogFeedBox .imgSec .dateSec:after{width: 0; height: 0; border-left: 0px solid transparent; border-right: 16px solid transparent; 
+	border-top: 38px solid #D350BE; content: ''; position: absolute;
+	top: 0; right: -16px;}
+
+
+.blg_0 .description{background:#131312; padding: 28px 20px 15px 20px;}
+.blg_1 .description{background: #414197; padding: 28px 20px 15px 20px;}
+.blg_2 .description{background:#131312; padding: 28px 20px 15px 20px;}
+
+.blogFeedBox .description h2{color: #fff; font-size: 24px; font-weight: normal; margin-bottom: 15px; line-height: 18px; text-align: center;}
+.blogFeedBox .description h2 a{color: #fff; font-size: 24px; font-weight: normal; line-height: 18px;}
+.blogFeedBox .description p{font-size: 16px; color: #fff; text-align: center; line-height: 24px; margin-bottom: 15px;}

@@ -87,3 +87,5 @@ figcaption, .wp-caption, .wp-caption-text, .wp-block-embed figcaption {
     margin-left: var(--global--spacing-horizontal);
   }
 
+  .blg_0{border: red solid 2px;}
+

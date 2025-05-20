@@ -12,6 +12,8 @@ import {
 import { motion } from "motion/react";
 import Image from "next/image";
 
+import defaultFeatureImg from "../../public/blogDemo.jpg"
+
 
 export function BentoGridThirdDemo({articles}) {
 
@@ -35,10 +37,10 @@ export function BentoGridThirdDemo({articles}) {
 
 
 
+
   return (
     <>
 
-    {/* {JSON.stringify(articles[0]?.title?.rendered, null, 2)} */}
     {/* <pre>
       {JSON.stringify(paginatedArticles[0]?._embedded, null, 2)}
       </pre> */}
@@ -47,16 +49,29 @@ export function BentoGridThirdDemo({articles}) {
       
       {paginatedArticles.map((item, i) => (
         <>
-        <BentoGridItem
+        {item?._embedded?.["wp:featuredmedia"] ? (
+          <>
+          <BentoGridItem
           key={i}
-          // author={item?.author}
           title={item?.title?.rendered}
           description={item?.excerpt?.rendered}
-          // header={item?.urlToImage}
+          header={item?._embedded["wp:featuredmedia"][0].source_url}
           className={cn("[&>p:text-lg]", item.className)}
           id={item?.id}
-          // icon={item.icon} 
           />
+          </>
+        ):(
+          <>
+          <BentoGridItem
+          key={i}
+          title={item?.title?.rendered}
+          description={item?.excerpt?.rendered}
+          header={defaultFeatureImg?.src}
+          className={cn("[&>p:text-lg]", item.className)}
+          id={item?.id}
+          />
+          </>
+        )}
           </>
       ))}
     </BentoGrid>

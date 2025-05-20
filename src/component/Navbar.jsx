@@ -16,13 +16,13 @@ export function Navbar({
     className={cn("container mx-auto fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}> */}
     <div
     className={cn("container mx-auto px-4 sm:px-6 flex justify-between items-center pt-3 pb-3", className)}>   
-        <Image
+        <Link href={"/"}><Image
                 aria-hidden
                 src="/logo_new.png"
                 alt="logo"
                 width={69}
                 height={90}
-                />
+                /></Link>
         <Menu setActive={setActive}>
             <Link href={"/"}>
             <MenuItem setActive={setActive} item="Home"> </MenuItem>
