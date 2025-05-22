@@ -12,7 +12,7 @@ import {
 import { motion } from "motion/react";
 import Image from "next/image";
 
-import defaultFeatureImg from "../../public/blogDemo.jpg"
+import defaultFeatureImg from "../../public/blog_demo.png"
 
 
 export function BentoGridThirdDemo({articles}) {

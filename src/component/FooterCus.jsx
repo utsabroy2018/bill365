@@ -13,7 +13,7 @@ export default function FooterCus() {
         {/* Left Section */}
         <div className="col-span-2 col-start-1">
           <div className="flex items-center gap-2 mb-4">
-            <Image
+            <img
             aria-hidden
             src="/logo_new.png"
             alt="logo"

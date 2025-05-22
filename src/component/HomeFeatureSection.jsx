@@ -67,7 +67,7 @@ export default function HomeFeatureSection() {
 
       {/* Right: Image */}
       <div className="md:w-1/2">
-        <Image
+        <img
           src="/feature-item-1-1.webp"
           alt="Descriptive Alt Text"
           width={500}

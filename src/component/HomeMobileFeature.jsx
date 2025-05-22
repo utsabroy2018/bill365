@@ -35,7 +35,7 @@ function HomeMobileFeature_New({
           </dl>
         </div>
         <div className="col-start-3 col-end-5 flex">
-            <Image
+            <img
                       src="/mob.png"
                       width={300}
                       height={300}

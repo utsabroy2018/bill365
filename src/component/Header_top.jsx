@@ -18,7 +18,7 @@ to streamline your operations and make accounting a doddle
 with our online invoicing software.</p>
 {/* <RequestDemoForm /> */}
 		
-		<div className={styles.formSec_header}>
+		{/* <div className={styles.formSec_header}>
 		<div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-full mx-auto">
   <div className="flex w-full sm:w-2/3 items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-2xl">
     <input
@@ -45,7 +45,7 @@ with our online invoicing software.</p>
 
 
 		
-		</div>
+		</div> */}
 	</div>
 	</div>
 </div>

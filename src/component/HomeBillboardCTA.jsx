@@ -26,7 +26,7 @@ export default function HomeBillboardCTA({pageData}) {
 
       {/* Right Section */}
       <div className="flex justify-center">
-        <Image
+        <img
           src="/get-start.webp" // Replace this with your actual image path
           alt="Happy user"
           width={300}

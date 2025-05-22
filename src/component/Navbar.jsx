@@ -16,7 +16,7 @@ export function Navbar({
     className={cn("container mx-auto fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}> */}
     <div
     className={cn("container mx-auto px-4 sm:px-6 flex justify-between items-center pt-3 pb-3", className)}>   
-        <Link href={"/"}><Image
+        <Link href={"/"}><img
                 aria-hidden
                 src="/logo_new.png"
                 alt="logo"
