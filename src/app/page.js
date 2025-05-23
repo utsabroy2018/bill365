@@ -17,6 +17,7 @@ import HomeFaq from "@/component/HomeFaq";
 import HomeBillboardCTA from "@/component/HomeBillboardCTA";
 
 import React, { useEffect, useState } from 'react'
+import { BaseUrl } from "./config";
 
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
   async function fetchPageData() {
     try {
       const res = await fetch(
-        'https://bill365.app/bill365/wp-json/wp/v2/pages/2'
+        `${BaseUrl}wp-json/wp/v2/pages/2`
       );
       const data = await res.json();
       setPageData(data);

@@ -46,7 +46,7 @@ function formatDate(isoString) {
   });
 }
 
-// const rawHTML = `<p>In today’s fast-paced business world, staying updated with tax regulations is crucial for success. GST Billing Software helps businesses in India manage their invoices, taxes, and returns with ease. Within the first 60 words, it becomes clear that using GST Billing Software saves time, reduces errors, and ensures businesses stay compliant with government rules. Since… <a class="more-link" href="https://bill365.app/bill365/why-is-gst-billing-software-important-for-businesses-in-india/">Continue reading</a></p>`;
+// const rawHTML = `<p>In today’s fast-paced business world, staying updated with tax regulations is crucial for success. GST Billing Software helps businesses in India manage their invoices, taxes, and returns with ease. Within the first 60 words, it becomes clear that using GST Billing Software saves time, reduces errors, and ensures businesses stay compliant with government rules. Since… <a class="more-link" href="https://wpadmin.bill365.app/why-is-gst-billing-software-important-for-businesses-in-india/">Continue reading</a></p>`;
 
 // const description = htmlToText(description, { wordwrap: false });
 

@@ -16,11 +16,13 @@ function HomeMobileFeature_New({
         
         {/* {JSON.stringify(data, null, 2)} */}
         <div className='container mx-auto pt-10'>
-        <div className="grid grid-cols-6 gap-4">
-        <div className={`col-span-4 col-start-2 ${styles.heading_title_feature}`}>
+        {/* <div className="grid grid-cols-6 gap-4"> */}
+        <div className={styles.allFeatureSec_feature}>
+        <div className={`col-start-1 col-end-7 ${styles.heading_title_feature}`}>
           <HTMLContent_Convert content={pageDataTitle || ''} />
         </div>
-        <div className="col-start-1 col-end-3">
+        <div className={styles.allFeatureSecSub_feature}>
+        <div className={styles.leftSec_feature}>
         <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-1 sm:gap-y-8 lg:gap-x-8">
             {pageDataLeft?.map((item) => (
               <div key={item.section_title} className="border-b border-gray-200 pb-4">
@@ -34,7 +36,7 @@ function HomeMobileFeature_New({
             ))}
           </dl>
         </div>
-        <div className="col-start-3 col-end-5 flex">
+        <div className={styles.midleSec_feature}>
             <img
                       src="/mob.png"
                       width={300}
@@ -44,7 +46,7 @@ function HomeMobileFeature_New({
                       alt="linear board demo" />
 
         </div>
-        <div className="col-start-5 col-end-7 text-right">
+        <div className={styles.righSec_feature}>
         <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-1 sm:gap-y-8 lg:gap-x-8">
             {pageDataRight?.map((item) => (
               <div key={item.section_title} className="border-b border-gray-200 pb-4">
@@ -57,6 +59,7 @@ function HomeMobileFeature_New({
               </div>
             ))}
           </dl>
+        </div>
         </div>
         
         {/* <div className="col-span-2">022222222</div>

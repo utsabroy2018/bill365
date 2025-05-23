@@ -5,6 +5,7 @@ import DOMPurify from 'dompurify'
 import Link from 'next/link'
 import HTMLContent_Convert from '@/component/DOMPurify';
 import Image from "next/image";
+import { BaseUrl } from '../config'
 
 function Features() {
 
@@ -16,7 +17,7 @@ function Features() {
       setLoading(true);
           try {
             const res = await fetch(
-              'https://bill365.app/bill365/wp-json/wp/v2/pages/820'
+              `${BaseUrl}wp-json/wp/v2/pages/820`
             );
             const data = await res.json();
             setPageData(data);
@@ -94,7 +95,7 @@ function Features() {
 
     <div className={`w-full mt-10`}>
     <div className={`container mx-auto px-4 sm:px-6 ${styles.section_text_Inner}`}>
-    <div className='grid grid-cols-6 gap-4 py-10'>
+    <div className={`grid grid-cols-6 gap-4 py-10 ${styles.grid_cols_6}`}>
     <div className='col-span-4 col-start-2 px-4 flex items-center justify-center'>
     <HTMLContent_Convert className={`${styles.banner_sec_content_inner}`} content={pageData?.content?.rendered || ''} />
     </div>
@@ -103,10 +104,10 @@ function Features() {
     </div>
 
 <div className={`max-w-7xl mx-auto ${styles.developmentSec}`}>
-    <div className="grid grid-cols-3 gap-6">
+    {/* <div className="grid grid-cols-3 gap-6"> */}
       {pageData?.acf?.box_with_icon_group?.box_with_icon_repeater.map((item, index) => (  
-      <div>
-      <div className={`${styles.box} mb-10`}>
+      <div className={styles.box_sec_4}>
+      <div className={`${styles.box}`}>
       <div className={`${styles.icon}`}><span>
       <img
     src={item?.upload_image?.url}
@@ -118,15 +119,15 @@ function Features() {
       </div>  
       </div>  
       ))}
-    </div>
+    {/* </div> */}
     </div>
 
 
     <div className="w-full mt-10">
     {pageData?.acf?.left_and_right_image_text?.left_and_right_repeater.map((item, index) => (
-    <div key={index}  className={`container mx-auto px-4 sm:px-6 py-10 flex flex-col md:flex-row ${styles.section_text_Inner} ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center`}>
+    <div key={index}  className={`container mx-auto px-4 sm:px-6 py-10 flex flex-col md:flex-row ${styles.row_custom} ${styles.section_text_Inner} ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center`}>
     {/* Image Section */}
-    <div className="md:w-1/2 w-full px-4 flex justify-center">
+    <div className={`md:w-1/2 w-full px-4 flex justify-center ${styles.imgSec_text}`}>
     <img
     src={item?.image_upload?.url}
     alt={`Image ${index + 1}`}

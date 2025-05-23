@@ -24,14 +24,14 @@ export function AnimatedRow({
         {/* {pageData?.map((item, index) => ( */}
           <div
             // key={index} 
-            className={`container mx-auto px-4 sm:px-6 py-10 flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center`}>
+            className={`container mx-auto px-4 sm:px-6 py-10 flex flex-col md:flex-row ${styles.row_custom} ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center`}>
             {/* Image Section */}
-            <div className="md:w-1/2 w-full px-4 flex justify-center">
-              <img src={image} alt="row image" className="rounded-xl shadow-md" />
+            <div className={`md:w-1/2 w-full px-4 flex justify-center ${styles.imgSec_text}`}>
+              <img src={image} alt="row image"/>
             </div>
 
             {/* Text Section */}
-            <div className="md:w-1/2 w-full px-4">
+            <div className={`md:w-1/2 w-full px-4 ${styles.imgSec_textArea}`}>
 
               <HTMLContent_Convert content={content_short_describ || ''} />
 

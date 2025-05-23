@@ -5,8 +5,8 @@ import HTMLContent_Convert from './DOMPurify';
 
 export default function HomeBillboardCTA({pageData}) {
   return (
-    <div className='container mx-auto pt-10 pb-15'>
-    <div className={`${styles.blueSec_Bottom} text-white px-8 py-5 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6`}>
+    <div className='container mx-auto pt-10 pb-15 px-5'>
+    <div className={`${styles.blueSec_Bottom} text-white px-8 py-5 rounded-xl flex flex-col md:flex-row items-start justify-between gap-6`}>
       {/* Left Section */}
       <div className={`flex-1 ${styles.blueSec_Bottom}`}>
         
@@ -25,7 +25,7 @@ export default function HomeBillboardCTA({pageData}) {
       </div>
 
       {/* Right Section */}
-      <div className="flex justify-center">
+      <div className={`flex justify-center ${styles.imgSecBottom}`}>
         <img
           src="/get-start.webp" // Replace this with your actual image path
           alt="Happy user"

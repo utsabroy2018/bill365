@@ -1,5 +1,6 @@
 'use client'; // if using app directory
 
+import { BaseUrl } from '@/app/config';
 import { useState } from 'react';
 
 export default function RequestDemoForm() {
@@ -15,7 +16,7 @@ export default function RequestDemoForm() {
 
     try {
       const res = await fetch(
-        'https://bill365.app/bill365/wp-json/contact-form-7/v1/contact-forms/2705/feedback',
+        `${BaseUrl}wp-json/contact-form-7/v1/contact-forms/2705/feedback`,
         {
           method: 'POST',
           body: formData,

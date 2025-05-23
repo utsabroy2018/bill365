@@ -4,6 +4,7 @@ import BlogSidebar from '@/component/BlogSidebar';
 // import React, { useEffect } from 'react'
 import React, { useEffect, useState } from 'react';
 import styles from '../../style/Blog.module.css'
+import { BaseUrl } from '../config';
 
 function Blog() {
 
@@ -16,9 +17,9 @@ function Blog() {
   setLoading(true);
       try {
         const res = await fetch(
-          // 'https://bill365.app/bill365/wp-json/wp/v2/posts'
-          // 'https://bill365.app/bill365/wp-json/wp/v2/posts?_embed'
-          'https://bill365.app/bill365/wp-json/wp/v2/posts?_embed&per_page=100&page=1'
+          // 'https://wpadmin.bill365.app/wp-json/wp/v2/posts'
+          // 'https://wpadmin.bill365.app/wp-json/wp/v2/posts?_embed'
+          `${BaseUrl}wp-json/wp/v2/posts?_embed&per_page=100&page=1`
         );
         const data = await res.json();
         setArticles(data);
@@ -40,11 +41,11 @@ function Blog() {
     {/* _embedded["wp:featuredmedia"][0].source_url */}
     {/* {JSON.stringify(articles[0]?.title?.rendered, null, 2)} /// */}
     {/* {JSON.stringify(articles[0], null, 2)}  */}
-    <div className="container mx-auto px-4">
-    <div className="grid grid-cols-3 gap-4 py-10">
+    <div className={`container mx-auto`}>
+    <div className={`${styles.blogMain}`}>
 
     
-    <div className="col-span-2 px-4">
+    <div className={`px-4 ${styles.blogLeftBar}`}>
       {loading ? (
       <>
       <div className="flex items-center justify-center h-full">

@@ -5,6 +5,7 @@ import DOMPurify from 'dompurify'
 import Link from 'next/link'
 import HTMLContent_Convert from '@/component/DOMPurify';
 import Image from "next/image";
+import { BaseUrl } from '../config'
 
 function Contact() {
 
@@ -15,7 +16,7 @@ function Contact() {
         setLoading(true);
       try {
       const res = await fetch(
-      'https://bill365.app/bill365/wp-json/wp/v2/pages/324'
+      `${BaseUrl}wp-json/wp/v2/pages/324`
       );
       const data = await res.json();
       setPageData(data);

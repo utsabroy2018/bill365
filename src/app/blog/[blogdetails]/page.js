@@ -6,6 +6,7 @@ import { htmlToText } from 'html-to-text';
 import styles from '../../../style/Blog.module.css'
 import Image from "next/image";
 import BlogSidebar from '@/component/BlogSidebar';
+import { BaseUrl } from '@/app/config';
 
 function Blogdetails(props) {
     const params = useParams();
@@ -21,7 +22,7 @@ function Blogdetails(props) {
           setLoading(true);
           try {
             const res = await fetch(
-              `https://bill365.app/bill365/wp-json/wp/v2/posts/${blog_ID}`
+              `${BaseUrl}wp-json/wp/v2/posts/${blog_ID}`
             );
             const data = await res.json();
             setArticles(data);
@@ -39,7 +40,7 @@ function Blogdetails(props) {
         // setLoading(true);
           try {
             const res = await fetch(
-              `https://bill365.app/bill365/wp-json/wp/v2/media/${media_id}`
+              `${BaseUrl}wp-json/wp/v2/media/${media_id}`
             );
             const data = await res.json();
             setArticlesFeaturImg(data?.media_details?.sizes?.large?.source_url);
@@ -60,7 +61,7 @@ function Blogdetails(props) {
         setLoading(true);
             try {
               const res = await fetch(
-                'https://bill365.app/bill365/wp-json/wp/v2/posts'
+                `${BaseUrl}wp-json/wp/v2/posts`
               );
               const data = await res.json();
               setArticles_Sidebar(data);
@@ -83,10 +84,10 @@ console.log(blog_ID, 'props', useParams);
   return (
     <>
     <div className="container mx-auto px-4">
-      <div className="grid grid-cols-3 gap-4 py-10">
+      <div className={`${styles.blogMain}`}>
     {/* Blog Details = {blog_ID} // */}
     {/* {JSON.stringify(articles?.content?.rendered, null, 2)} */}
-    <div className={`col-span-2 px-4 ${styles.blogdtlsWrap}`}>
+    <div className={`px-4 ${styles.blogdtlsWrap} ${styles.blogLeftBar}`}>
       {loading ? (
       <>
       <div className="flex items-center justify-center h-full">
@@ -149,7 +150,7 @@ console.log(blog_ID, 'props', useParams);
      )}
     </div>
 
-    <div className="px-4 sideBarBlog">
+    <div className={`px-4 ${styles.sideBarBlog}`}>
       <BlogSidebar articles={articles_Sidebar} />
     </div>
     </div>

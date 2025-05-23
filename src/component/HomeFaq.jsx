@@ -5,20 +5,7 @@ import { ChevronDown } from "lucide-react";
 import HTMLContent_Convert from "./DOMPurify";
 import styles from '../style/Home.module.css'
 
-const faqs = [
-  {
-    question: "What is CONFED-WB?",
-    answer: "CONFED-WB is an e-commerce platform connecting buyers, sellers, and super admins."
-  },
-  {
-    question: "How do I register as a seller?",
-    answer: "Click on the Register link at the top and choose the Seller option to begin the process."
-  },
-  {
-    question: "Is there a return policy?",
-    answer: "Yes, products can be returned within 7 days if they meet the return criteria."
-  }
-];
+
 
 export default function HomeFaq({
   pageDataTitle,
@@ -32,11 +19,11 @@ export default function HomeFaq({
 
   return (
     <div className='container mx-auto py-10'>
-        <div className={`grid grid-cols-6 gap-4 ${styles.faqSec}`}>
-        <div className={`col-span-4 col-start-2 ${styles.section_header}`}> 
+        <div className={`${styles.faqSec}`}>
+        <div className={`${styles.section_header}`}> 
         <HTMLContent_Convert content={pageDataTitle || ''} />
         </div>
-      <div className="col-span-4 col-start-2 px-5">
+      <div className={`${styles.faqSec_sub} px-5`}>
         {pageData?.map((faq, index) => (
           <div key={index} className="rounded-lg shadow-xl/7">
             <button

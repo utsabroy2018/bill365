@@ -6,6 +6,7 @@ import Link from 'next/link'
 import HTMLContent_Convert from '@/component/DOMPurify';
 import Image from "next/image";
 import { Loader } from 'lucide-react'
+import { BaseUrl } from '../config'
 
 function About() {
 
@@ -17,7 +18,7 @@ function About() {
     setLoading(true)
         try {
           const res = await fetch(
-            'https://bill365.app/bill365/wp-json/wp/v2/pages/8'
+            `${BaseUrl}wp-json/wp/v2/pages/8`
           );
           const data = await res.json();
           setPageData(data);
@@ -122,11 +123,11 @@ function About() {
 
     <div className={`w-full mt-10`}>
     <div className={`container mx-auto px-4 sm:px-6 ${styles.section_text_Inner}`}>
-    <div className='grid grid-cols-5 gap-4 py-10'>
+    <div className={`grid grid-cols-5 gap-4 py-10 ${styles.row_custom} ${styles.grid_cols_5}`}>
     <div className='col-span-3 px-4 flex items-center justify-center'>
     <HTMLContent_Convert className={`${styles.banner_sec_content_inner}`} content={pageData?.content?.rendered || ''} />
     </div>
-    <div className='col-span-2 px-4 flex items-center justify-center'>
+    <div className={`col-span-2 px-4 flex items-center justify-center ${styles.imgSec_text}`}>
     <img
     src={mediaData?.source_url}
     // alt={author}
@@ -141,9 +142,9 @@ function About() {
 
      <div className="w-full mt-10">
     {pageData?.acf?.left_and_right_image_text?.left_and_right_repeater.map((item, index) => (
-    <div key={index}  className={`container mx-auto px-4 sm:px-6 py-10 flex flex-col md:flex-row ${styles.section_text_Inner} ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center`}>
+    <div key={index}  className={`container mx-auto px-4 sm:px-6 py-10 flex flex-col md:flex-row ${styles.row_custom} ${styles.section_text_Inner} ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center`}>
     {/* Image Section */}
-    <div className="md:w-1/2 w-full px-4 flex justify-center">
+    <div className={`md:w-1/2 w-full px-4 flex justify-center ${styles.imgSec_text}`}>
     <img
     src={item?.image_upload?.url}
     alt={`Image ${index + 1}`}

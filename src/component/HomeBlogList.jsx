@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import styles from '../style/Home.module.css'
 import HTMLContent_Convert from './DOMPurify';
 import { useRouter } from 'next/router';
+import { BaseUrl } from '@/app/config';
 
 function HomeBlogList() {
 
@@ -12,9 +13,9 @@ function HomeBlogList() {
    async function fetchNews() {
         try {
           const res = await fetch(
-            // 'https://bill365.app/bill365/wp-json/wp/v2/posts'
-            // 'https://bill365.app/bill365/wp-json/wp/v2/posts?_embed'
-            'https://bill365.app/bill365/wp-json/wp/v2/posts?_embed&per_page=100&page=1'
+            // 'https://wpadmin.bill365.app/wp-json/wp/v2/posts'
+            // 'https://wpadmin.bill365.app/wp-json/wp/v2/posts?_embed'
+            `${BaseUrl}wp-json/wp/v2/posts?_embed&per_page=100&page=1`
           );
           const data = await res.json();
           setArticles(data);
@@ -38,14 +39,14 @@ function HomeBlogList() {
        <div className='container mx-auto py-10'>
         {/* <div className="grid grid-cols-6 gap-4"> */}
         <div className="col-span-4 col-start-2">
-        <h2 className="relative z-10 mx-auto w-full text-center text-5xl/12 font-bold text-gray-900 dark:text-gray-900 home_feature_title mb-2">
+        <h2 className={`relative z-10 mx-auto w-full text-center text-5xl/12 font-bold text-gray-900 dark:text-gray-900 ${styles.home_feature_title} mb-2`}>
         Our Latest Articles and Blogs  </h2>
         <p className="relative z-10 mx-auto w-full pb-10 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400">
         To learn more about our billing software, bill365, follow our blog page.
         </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="container">
         {articles?.slice(0, 3).map((item, index) => (
         <div className={`px-5 ${styles.blogFeedBox} ${index === 0 ? styles.blg_0 : index === 1  ? styles.blg_1 : index === 2 ? styles.blg_2 : ""}`}>
         <div className={styles.imgSec}>
@@ -56,7 +57,7 @@ function HomeBlogList() {
         <img src={item?._embedded["wp:featuredmedia"][0].source_url} alt="" 
         className="object-cover h-full w-full" />
         ):(
-        <img src="https://bill365.app/bill365/wp-content/themes/bill365-child/assets/images/blog_demo.png" alt="" 
+        <img src={`${BaseUrl}wp-content/themes/bill365-child/assets/images/blog_demo.png`} alt="" 
         className="object-cover h-full w-full" />
         )}
         

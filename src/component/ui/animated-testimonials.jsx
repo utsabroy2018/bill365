@@ -1,7 +1,7 @@
 "use client";;
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
-
+import styles from '../../style/Home.module.css'
 import { useEffect, useState } from "react";
 
 export const AnimatedTestimonials = ({
@@ -34,8 +34,8 @@ export const AnimatedTestimonials = ({
   };
   return (
     <div
-      className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
-        <h2 className="relative z-10 mx-auto w-full text-center text-5xl/12 font-bold text-gray-900 dark:text-gray-900 home_feature_title mb-10">
+      className={`mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12 ${styles.testimonial}`}>
+        <h2 className={`relative z-10 mx-auto w-full text-center text-5xl/12 font-bold text-gray-900 dark:text-gray-900 mb-10 ${styles.home_feature_title}`}>
         <span> Kolkata's Billing Choice </span>
         What Our Customer Say
         </h2>

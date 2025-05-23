@@ -22,7 +22,7 @@ function BlogSidebar({articles}) {
         </ul>
 		</section>
 
-        <section className={styles.blogWidget}>
+        {/* <section className={styles.blogWidget}>
 		<h2 className="widget-title">Related Posts</h2>
         <ul>
         <li><a href="#" aria-current="page">Why is GST billing software important for businesses in India?</a></li>
@@ -39,7 +39,7 @@ function BlogSidebar({articles}) {
         <a href="#" className="tag-cloud-link tag-link-172 tag-link-position-11">#gstbillingsoftware</a>
         <a href="#" className="tag-cloud-link tag-link-172 tag-link-position-11">#gstbillingsoftware</a>
         </div>
-		</section>
+		</section> */}
 
     </div>
   )
