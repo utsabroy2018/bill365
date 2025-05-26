@@ -89,3 +89,5 @@ figcaption, .wp-caption, .wp-caption-text, .wp-block-embed figcaption {
 
   .blg_0{border: red solid 2px;}
 
+  figure{width: 100% !important;}
+

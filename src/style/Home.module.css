@@ -57,7 +57,7 @@ font-weight: 900; margin: 0 !important;}
 margin-bottom: 45px; text-align: center;}
 
 
-.scroll_Sec{width: 100%; margin-bottom: 80px;}
+.scroll_Sec{width: 100%; margin-bottom: 80px; display: inline-block;}
 
 .scroll_Sec .partner_box {
 padding:30px 40px 30px 0px;
@@ -300,11 +300,11 @@ line-height: 30px;
 
 .allFeatureSecSub_feature{width: 100%; display: flex; padding: 0 15px;}
 
-.leftSec_feature{width: 27%;}
+.leftSec_feature{width: 35%;}
 
-.righSec_feature{width: 27%; text-align: right;}
+.righSec_feature{width: 35%; text-align: right;}
 
-.midleSec_feature{width: 46%; display: flex;}
+.midleSec_feature{width: 30%; display: flex;}
 
 
 .leftSec_feature .box_feature{width: 100%; margin-bottom: 20px;}
@@ -380,6 +380,26 @@ line-height: 30px;
 }
 
 .faqSec_sub{max-width: 800px; margin: 0 auto;}
+
+
+.banner_logo_wrap{display: flex; align-items: flex-start;}
+.banner_logo_left{width: 30%; float: left; padding-top: 30px; padding-bottom: 30px;}
+.banner_logo_right{width: 70%; float: left;}
+
+
+.hamberger_menu{cursor: pointer; 
+  background-color: #414197 !important;
+  border-radius: 5px;
+  color: #fff;
+  padding: 7px 12px;
+}
+
+
+
+
+
+
+
 
 /* =================Responsive CSS Start================== */
 
@@ -503,8 +523,8 @@ line-height: 30px;
 	
 .button_CTA {font-size: 15px; padding: 0 5px;}
 .banner_padd {
-    min-height: 623px;
-    padding-top: 0;
+    min-height: inherit;
+    padding-top: 0; padding-bottom: 0;
   }
 
   .imgSecBottom{display: none;}
@@ -565,6 +585,34 @@ line-height: 30px;
 .blue_txt .grid {display:inherit;}
 	
 .blogFeedBox .description h2 a{color: #fff; font-size: 20px; font-weight: normal; line-height: 16px;}
+
+.banner_logo_wrap{display: block;}
+.banner_logo_left{width: 100%; float: none; padding-top: 0; padding-bottom: 10px; text-align: center;}
+.banner_logo_right{width: 100%; float: none; padding: 0;}
+.scroll_Sec .partner_box{width: 100%; float: none; padding: 0;}
+
+.bottom_nav_logo{justify-content: center !important; padding-bottom: 20px;}
+
+.navSection_responsive {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    top: 92px;
+    padding-bottom: 21px;
+    border-radius: 0 0 15px 15px;
+    padding: 0 30px;
+    left: 0;
+  }
+
+  .navSection_responsive span{padding-left: 0 !important; padding-right: 0 !important;}
+
+  .logo_img img{width: 50px;}
+
+}
+
+
+@media only screen and (max-width: 639px) {
+ .navSection_responsive {padding: 0 18px;}
 
 }
 

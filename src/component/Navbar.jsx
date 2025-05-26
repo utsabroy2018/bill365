@@ -5,62 +5,81 @@ import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
+import { Menu as MenuIcon, X as CloseIcon } from "lucide-react";
+import styles from '../style/Home.module.css'
 
-export function Navbar({
-    className
-  }) {
-    const [active, setActive] = useState(null);
+export function Navbar({ className }) {
+  const [active, setActive] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
-    <>
-    {/* <div
-    className={cn("container mx-auto fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}> */}
-    <div
-    className={cn("container mx-auto px-4 sm:px-6 flex justify-between items-center pt-3 pb-3", className)}>   
-        <Link href={"/"}><img
-                aria-hidden
-                src="/logo_new.png"
-                alt="logo"
-                width={69}
-                height={90}
-                /></Link>
-        <Menu setActive={setActive}>
+    <div className={cn("container mx-auto px-4 sm:px-6 relative", className)}>
+      <div className="flex justify-between items-center pt-3 pb-3">
+        <Link href={"/"} className={styles.logo_img}>
+          <img
+            aria-hidden
+            src="/logo_new.png"
+            alt="logo"
+            width={69}
+            height={90}
+          />
+        </Link>
+
+        {/* Hamburger Button - visible only on mobile */}
+        <button
+          className={`md:hidden ${styles.hamberger_menu}`}
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+        >
+          {menuOpen ? <CloseIcon size={24} /> : <MenuIcon size={24} />}
+        </button>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex">
+          <Menu setActive={setActive}>
             <Link href={"/"}>
-            <MenuItem setActive={setActive} item="Home"> </MenuItem>
+              <MenuItem setActive={setActive} item="Home" />
             </Link>
-            {/* <MenuItem setActive={setActive} active={active} item="About Us"> */}
             <Link href={"/about"}>
-            <MenuItem setActive={setActive} item="About Us">
-            {/* <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/courses">All Courses</HoveredLink>
-            <HoveredLink href="/courses"> Basic Music Theory </HoveredLink>
-            <HoveredLink href="/courses"> Advanced Composition </HoveredLink>
-            <HoveredLink href="/courses">Songwriting</HoveredLink>
-            <HoveredLink href="/courses"> Music Production </HoveredLink>
-            </div> */}
-            </MenuItem>
+              <MenuItem setActive={setActive} item="About Us" />
             </Link>
             <Link href={"/features"}>
-            <MenuItem setActive={setActive} item="Features">
-            
-            </MenuItem>
+              <MenuItem setActive={setActive} item="Features" />
             </Link>
             <Link href={"/blog"}>
-            <MenuItem setActive={setActive} item="Blog">
-            
-            </MenuItem>
+              <MenuItem setActive={setActive} item="Blog" />
             </Link>
             <Link href={"/contact"}>
-            <MenuItem setActive={setActive} item="Contact Us">
-            
-            </MenuItem>
+              <MenuItem setActive={setActive} item="Contact Us" />
             </Link>
+          </Menu>
+        </div>
+      </div>
 
-            
-            
-        </Menu>
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className={`${styles.navSection_responsive} container mx-auto px-4 sm:px-6`}>
+          <Link href="/" onClick={() => setMenuOpen(false)}>
+            <span className="block px-4 py-2">Home</span>
+          </Link>
+          <Link href="/about" onClick={() => setMenuOpen(false)}>
+            <span className="block px-4 py-2">About Us</span>
+          </Link>
+          <Link href="/features" onClick={() => setMenuOpen(false)}>
+            <span className="block px-4 py-2">Features</span>
+          </Link>
+          <Link href="/blog" onClick={() => setMenuOpen(false)}>
+            <span className="block px-4 py-2">Blog</span>
+          </Link>
+          <Link href="/contact" onClick={() => setMenuOpen(false)}>
+            <span className="block px-4 py-2">Contact Us</span>
+          </Link>
+        </div>
+      )}
     </div>
-    </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

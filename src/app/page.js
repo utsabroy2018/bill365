@@ -58,7 +58,6 @@ export default function Home() {
       <AppleCardsCarouselDemo pageData={pageData?.acf?.our_client} />
 
       <HeroSectionOne pageData={pageData?.content?.rendered} />
-      {/* <HomeFeatureSection /> */}
 
 
       <div className="container mx-auto px-4 py-3">
