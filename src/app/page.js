@@ -22,7 +22,10 @@ import { BaseUrl } from "./config";
 // Server-side data fetch
 async function fetchPageData() {
   const res = await fetch(`${BaseUrl}wp-json/wp/v2/pages/2`, {
-    cache: 'no-store', // Or 'force-cache' depending on your use case
+    // cache: 'no-store', // Or 'force-cache' depending on your use case
+    next: {
+      revalidate: 10 // fetch data after every 10 sec
+    }, 
   });
   const data = await res.json();
   return data;
