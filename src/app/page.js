@@ -1,4 +1,3 @@
-'use client'
 // import AnimatedRow from "@/component/AnimatedRow";
 import { AnimatedRow } from "@/component/AnimatedRow";
 import { AppleCardsCarouselDemo } from "@/component/AppleCardsCarouselDemo";
@@ -16,36 +15,50 @@ import HomeBlogList from "@/component/HomeBlogList";
 import HomeFaq from "@/component/HomeFaq";
 import HomeBillboardCTA from "@/component/HomeBillboardCTA";
 
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
+
 import { BaseUrl } from "./config";
 
-
-export default function Home() {
-
-  const [pageData, setPageData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  async function fetchPageData() {
-    try {
-      const res = await fetch(
-        `${BaseUrl}wp-json/wp/v2/pages/2`
-      );
-      const data = await res.json();
-      setPageData(data);
-
-      console.log(data, 'datadatadata');
+// Server-side data fetch
+async function fetchPageData() {
+  const res = await fetch(`${BaseUrl}wp-json/wp/v2/pages/2`, {
+    cache: 'no-store', // Or 'force-cache' depending on your use case
+  });
+  const data = await res.json();
+  return data;
+}
 
 
-    } catch (error) {
-      console.error('Error fetching articles:', error);
-    } finally {
-      setLoading(false);
-    }
-  }
+// export default function Home() {
 
-  useEffect(() => {
-    fetchPageData();
-  }, []);
+export default async function Home() {
+  const pageData = await fetchPageData();
+
+  // const [pageData, setPageData] = useState([]);
+  // // const [loading, setLoading] = useState(true);
+
+  // async function fetchPageData() {
+  //   try {
+  //     const res = await fetch(
+  //       `${BaseUrl}wp-json/wp/v2/pages/2`
+  //     );
+  //     const data = await res.json();
+  //     setPageData(data);
+
+  //     console.log(data, 'datadatadata');
+
+
+  //   } catch (error) {
+  //     console.error('Error fetching articles:', error);
+  //   } finally {
+  //     // setLoading(false);
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   fetchPageData();
+  // }, []);
+
 
   return (
     <>

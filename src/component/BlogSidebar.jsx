@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+// "use client"
+// import React, { useEffect, useState } from 'react'
 import styles from '../style/Blog.module.css'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 
-function BlogSidebar({articles}) {
+export default async function BlogSidebar({articles}) {
 
 
   return (
@@ -22,27 +23,10 @@ function BlogSidebar({articles}) {
         </ul>
 		</section>
 
-        {/* <section className={styles.blogWidget}>
-		<h2 className="widget-title">Related Posts</h2>
-        <ul>
-        <li><a href="#" aria-current="page">Why is GST billing software important for businesses in India?</a></li>
-        <li><a href="#" aria-current="page">Why is GST billing software important for businesses in India?</a></li>
-        <li><a href="#" aria-current="page">Why is GST billing software important for businesses in India?</a></li>
-        <li><a href="#" aria-current="page">Why is GST billing software important for businesses in India?</a></li>
-        </ul>
-		</section>
-
-        <section className={styles.blogWidget}>
-		<h2 className="widget-title">Tag</h2>
-        <div className={styles.tag_link}>
-        <a href="#" className="tag-cloud-link tag-link-172 tag-link-position-11">#gstbillingsoftware</a>
-        <a href="#" className="tag-cloud-link tag-link-172 tag-link-position-11">#gstbillingsoftware</a>
-        <a href="#" className="tag-cloud-link tag-link-172 tag-link-position-11">#gstbillingsoftware</a>
-        </div>
-		</section> */}
+        
 
     </div>
   )
 }
 
-export default BlogSidebar
+// export default BlogSidebar
