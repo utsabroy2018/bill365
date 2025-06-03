@@ -1,4 +1,3 @@
-// 'use client';
 import Image from 'next/image'
 import styles from '../style/Home.module.css'
 import HTMLContent_Convert from './DOMPurify';

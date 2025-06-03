@@ -5,7 +5,10 @@ import { BaseUrl } from '../config'
 
 async function fetchPageData() {
   const res = await fetch(`${BaseUrl}wp-json/wp/v2/pages/8`, {
-    cache: 'no-store',
+    // cache: 'no-store',
+    next: {
+      revalidate: 10 // fetch data after every 10 sec
+    },
   });
   const data = await res.json();
   return data;

@@ -1,6 +1,3 @@
-// "use client";
-
-
 import { motion } from "motion/react";
 import HTMLContent_Convert from "./DOMPurify";
 import styles from '../style/Home.module.css'

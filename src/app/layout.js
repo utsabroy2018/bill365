@@ -7,6 +7,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import { Jost } from 'next/font/google';
 import Navbar from "@/component/Navbar";
 import FooterCus from "@/component/FooterCus";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 
 const jost = Jost({
   subsets: ['latin'],
@@ -39,7 +40,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
+        <ErrorBoundary fallback={<Error />}>
         {children}
+        </ErrorBoundary>
         <FooterCus />
       </body>
     </html>
